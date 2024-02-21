@@ -3,17 +3,17 @@ package Prototype.flowers;
 import java.util.Objects;
 
 public class Tulip extends Flower {
-    String sort;
+    String shape;
 
-    public Tulip(String color, String name, String sort) {
+    public Tulip(String color, String name, String shape) {
         super(color, name);
-        this.sort = sort;
+        this.shape = shape;
     }
 
     public Tulip(Tulip sample) {
         super(sample);
         if (sample == null) {
-            this.sort = sample.sort;
+            this.shape = sample.shape;
         }
     }
 
@@ -26,6 +26,6 @@ public class Tulip extends Flower {
     public boolean equals(Object obj) {
         if (!(obj instanceof Tulip) || !super.equals(obj)) return false;
         Tulip tulip1 = (Tulip) obj;
-        return Objects.equals(tulip1.sort, this.sort);
+        return Objects.equals(tulip1.shape, this.shape);
     }
 }
