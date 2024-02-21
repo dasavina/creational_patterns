@@ -1,10 +1,14 @@
-import Prototype.flowers.Flower;
-import Prototype.flowers.Iris;
-import Prototype.flowers.Tulip;
+
+import FactoryPattern.*;
 import Singleton.Singleton;
+import Prototype.flowers.*;
+
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static Prototype.CompareObjects.cloneAndCompare;
+
 
 public class Main {
     public static void main(String[] args) {
@@ -23,14 +27,28 @@ public class Main {
         System.out.println(singleton2.value);
     }
 
-    public static void builderPattern(){}
-    public static void factoryPattern(){}
-    public static void abstractFactoryPattern(){}
-    public static void prototypePattern(){
+    public static void builderPattern() {
+
+    }
+
+    public static void factoryPattern() {
+        ClockFactory factory;
+        String typeOfClock = "mechanical";
+
+        factory = new MechanicalClockFactory();
+        Clock clock = factory.createClock();
+        clock.showTime();
+    }
+
+    public static void abstractFactoryPattern() {
+    }
+
+    public static void prototypePattern() {
         List<Flower> flowers = new ArrayList<>();
         List<Flower> copies = new ArrayList<>();
         Iris iris = new Iris("purple", "dutch", 20);
         Iris clonedIris = new Iris(iris);
         Tulip tulip = new Tulip("white", "Darwin Hybrid", "cup");
+        cloneAndCompare(flowers, copies);
     }
 }

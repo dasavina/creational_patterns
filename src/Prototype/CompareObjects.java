@@ -5,7 +5,7 @@ import Prototype.flowers.Flower;
 import java.util.List;
 
 public class CompareObjects {
-    private static void cloneAndCompare(List<Flower> flowers, List<Flower> clones) {
+    public static void cloneAndCompare(List<Flower> flowers, List<Flower> clones) {
         for (Flower flower : flowers) {
             clones.add(flower.clone());
         }
