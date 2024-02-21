@@ -13,33 +13,39 @@ public class MechanicalClockBuilder implements Builder{
     private EnergySource energySource;
     private Corpse corpse;
     private String tickingSound;
-    public ClockFromDetails getResult()
+
+    public  MechanicalClock buildClock(String displayColor, String corpseMaterial, String corpseColor)
     {
+        buildDetails();
+        buildEnergySource();
+        buildCorpse(corpseColor, corpseMaterial);
+        buildDisplay(displayColor);
+        buildSound();
         return new MechanicalClock(display, details, energySource, corpse, tickingSound);
     }
 
     @Override
-    public void buildDisplay(Display display) {
-        this.display = display;
+    public void buildDisplay(String displayColor) {
+        this.display = new Display("analogue", displayColor);
     }
 
     @Override
-    public void buildDetails(Details details) {
-        this.details = details;
+    public void buildDetails() {
+        this.details = new Details("mechanical");
     }
 
     @Override
-    public void buildEnergySource(EnergySource energySource) {
-        this.energySource = energySource;
+    public void buildEnergySource() {
+        this.energySource = new EnergySource(5, "hairspring");
     }
 
     @Override
-    public void buildCorpse(Corpse corpse) {
-        this.corpse = corpse;
+    public void buildCorpse(String corpseColor, String corpseMaterial) {
+        this.corpse = new Corpse(corpseMaterial, corpseColor);
     }
 
     @Override
-    public void buildSound(String sound) {
-        this.tickingSound = sound;
+    public void buildSound() {
+        this.tickingSound = "tick-tock";
     }
 }

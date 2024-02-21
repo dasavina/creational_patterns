@@ -15,4 +15,12 @@ public class DigitalClock extends ClockFromDetails{
     public String getAlarmSound() {
         return alarmSound;
     }
+
+    @Override
+    public String toString() {
+        return super.toString() +
+                "DigitalClock{" +
+                "alarmSound='" + alarmSound + '\'' +
+                '}';
+    }
 }

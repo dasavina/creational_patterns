@@ -15,4 +15,12 @@ public class MechanicalClock extends ClockFromDetails{
     public String getTickingSound() {
         return tickingSound;
     }
+
+    @Override
+    public String toString() {
+        return super.toString() +
+                "MechanicalClock{" +
+                "tickingSound='" + tickingSound + '\'' +
+                '}';
+    }
 }

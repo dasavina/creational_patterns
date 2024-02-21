@@ -1,4 +1,8 @@
 
+import Builder.builders.DigitalClockBuilder;
+import Builder.builders.MechanicalClockBuilder;
+import Builder.clocks.DigitalClock;
+import Builder.clocks.MechanicalClock;
 import FactoryPattern.*;
 import Singleton.Singleton;
 import Prototype.flowers.*;
@@ -28,7 +32,12 @@ public class Main {
     }
 
     public static void builderPattern() {
-
+        MechanicalClockBuilder mechBuilder = new MechanicalClockBuilder();
+        DigitalClockBuilder digitalBuilder = new DigitalClockBuilder();
+        MechanicalClock mechanicalClock = mechBuilder.buildClock("white", "metal", "silver");
+        DigitalClock digitalClock = digitalBuilder.buildClock("black", "plastic", "black");
+        mechanicalClock.toString();
+        digitalClock.toString();
     }
 
     public static void factoryPattern() {

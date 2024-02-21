@@ -30,4 +30,14 @@ public abstract class ClockFromDetails {
     public Corpse getCorpse() {
         return corpse;
     }
+
+    @Override
+    public String toString() {
+        return "ClockFromDetails{" +
+                "display=" + display +
+                ", details=" + details +
+                ", energySource=" + energySource +
+                ", corpse=" + corpse +
+                '}';
+    }
 }

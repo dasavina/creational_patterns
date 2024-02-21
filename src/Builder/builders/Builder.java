@@ -3,9 +3,9 @@ package Builder.builders;
 import Builder.components.*;
 
 public interface Builder {
-    void buildDisplay(Display display);
-    void buildDetails(Details details);
-    void buildEnergySource(EnergySource energySource);
-    void buildCorpse(Corpse corpse);
-    void buildSound(String sound);
+    void buildDisplay(String displayColor);
+    void buildDetails();
+    void buildEnergySource();
+    void buildCorpse(String corpseMaterial, String corpseColor);
+    void buildSound();
 }
