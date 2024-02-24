@@ -1,4 +1,8 @@
 
+import AbstractFactory.factories.EuropeanGardenFactory;
+import AbstractFactory.factories.GardenFactory;
+import AbstractFactory.factories.JapaneseGardenFactory;
+import AbstractFactory.gardens.Garden;
 import Builder.builders.DigitalClockBuilder;
 import Builder.builders.MechanicalClockBuilder;
 import Builder.clocks.DigitalClock;
@@ -50,6 +54,18 @@ public class Main {
     }
 
     public static void abstractFactoryPattern() {
+        String input = "";
+        Garden garden;
+        GardenFactory factory;
+        if (input.equals("European"))
+        {
+            factory = new EuropeanGardenFactory();
+        }
+        else {
+            factory = new JapaneseGardenFactory();
+        }
+        garden = new Garden(factory);
+        System.out.println(garden.toString());
     }
 
     public static void prototypePattern() {

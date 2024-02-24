@@ -1,5 +1,5 @@
 package AbstractFactory.waterSource;
 
 public interface WaterSource {
-    void fillWater();
+    String fillWater();
 }
