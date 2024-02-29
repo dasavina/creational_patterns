@@ -8,4 +8,12 @@ public class Display {
         this.type = type;
         this.color = color;
     }
+
+    @Override
+    public String toString() {
+        return "Display{" +
+                "type='" + type + '\'' +
+                ", color='" + color + '\'' +
+                '}';
+    }
 }

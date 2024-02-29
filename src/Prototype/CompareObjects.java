@@ -11,14 +11,14 @@ public class CompareObjects {
         }
         for (int i = 0; i < flowers.size(); i++) {
             if (flowers.get(i) != clones.get(i)) {
-                System.out.println(i + "different objects");
+                System.out.println(i + " different objects");
                 if (flowers.get(i).equals(clones.get(i))) {
-                    System.out.println(i + "identical");
+                    System.out.println(i + " identical");
                 } else {
-                    System.out.println(i + "not identical");
+                    System.out.println(i + " not identical");
                 }
             } else {
-                System.out.println(i + "same object");
+                System.out.println(i + " same object");
             }
         }
     }

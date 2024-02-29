@@ -18,7 +18,7 @@ public class MechanicalClock extends ClockFromDetails{
 
     @Override
     public String toString() {
-        return super.toString() +
-                "tickingSound='" + tickingSound + '\'';
+        return (super.toString() +
+                "\ntickingSound='" + tickingSound);
     }
 }

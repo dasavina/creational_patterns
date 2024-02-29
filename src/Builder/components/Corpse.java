@@ -8,4 +8,12 @@ public class Corpse {
         this.material = material;
         this.color = color;
     }
+
+    @Override
+    public String toString() {
+        return "Corpse{" +
+                "material='" + material + '\'' +
+                ", color='" + color + '\'' +
+                '}';
+    }
 }

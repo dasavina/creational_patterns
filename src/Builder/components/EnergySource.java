@@ -8,4 +8,12 @@ public class EnergySource {
         this.lastsFor = lastsFor;
         this.type = type;
     }
+
+    @Override
+    public String toString() {
+        return "EnergySource{" +
+                "lastsFor=" + lastsFor +
+                ", type='" + type + '\'' +
+                '}';
+    }
 }

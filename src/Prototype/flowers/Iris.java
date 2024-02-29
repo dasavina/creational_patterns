@@ -11,7 +11,7 @@ public class Iris extends Flower {
 
     public Iris(Iris sample) {
         super(sample);
-        if (sample == null) {
+        if (sample != null) {
             this.height = sample.height;
         }
     }

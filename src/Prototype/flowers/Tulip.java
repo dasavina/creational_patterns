@@ -12,7 +12,7 @@ public class Tulip extends Flower {
 
     public Tulip(Tulip sample) {
         super(sample);
-        if (sample == null) {
+        if (sample != null) {
             this.shape = sample.shape;
         }
     }
