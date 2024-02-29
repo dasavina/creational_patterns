@@ -19,9 +19,9 @@ public class Garden {
     @Override
     public String toString() {
         return "Garden{" +
-                "flower=" + flower.bloom() +
-                ", tree=" + tree.grow() +
-                ", waterSource=" + waterSource.fillWater() +
+                flower.bloom() +
+                tree.grow() +
+                waterSource.fillWater() +
                 '}';
     }
 }

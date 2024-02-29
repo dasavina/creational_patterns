@@ -20,15 +20,20 @@ import static Prototype.CompareObjects.cloneAndCompare;
 
 public class Main {
     public static void main(String[] args) {
+        System.out.println("Singleton pattern");
         singletonPattern();
+        System.out.println("Builder pattern");
         builderPattern();
+        System.out.println("factory pattern");
         factoryPattern();
+        System.out.println("Abstract factory pattern");
         abstractFactoryPattern();
+        System.out.println("Prototype pattern");
         prototypePattern();
     }
 
     public static void singletonPattern() {
-        System.out.println("Singleton pattern");
+
         Singleton singleton1 = Singleton.getInstance("value1");
         Singleton singleton2 = Singleton.getInstance("value2");
         System.out.println(singleton1.value);
@@ -40,15 +45,22 @@ public class Main {
         DigitalClockBuilder digitalBuilder = new DigitalClockBuilder();
         MechanicalClock mechanicalClock = mechBuilder.buildClock("white", "metal", "silver");
         DigitalClock digitalClock = digitalBuilder.buildClock("black", "plastic", "black");
-        mechanicalClock.toString();
-        digitalClock.toString();
+        System.out.println(mechanicalClock.toString());
+        System.out.println(digitalClock.toString());
     }
 
     public static void factoryPattern() {
         ClockFactory factory;
         String typeOfClock = "mechanical";
+        if (typeOfClock.equals("mechanical"))
+        {
+            factory = new MechanicalClockFactory();
+        }
+        else {
+            factory = new DigitalClockFactory();
+        }
 
-        factory = new MechanicalClockFactory();
+
         Clock clock = factory.createClock();
         clock.showTime();
     }
@@ -74,6 +86,9 @@ public class Main {
         Iris iris = new Iris("purple", "dutch", 20);
         Iris clonedIris = new Iris(iris);
         Tulip tulip = new Tulip("white", "Darwin Hybrid", "cup");
+        flowers.add(iris);
+        flowers.add(clonedIris);
+        flowers.add(tulip);
         cloneAndCompare(flowers, copies);
     }
 }

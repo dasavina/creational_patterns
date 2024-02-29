@@ -18,9 +18,6 @@ public class DigitalClock extends ClockFromDetails{
 
     @Override
     public String toString() {
-        return super.toString() +
-                "DigitalClock{" +
-                "alarmSound='" + alarmSound + '\'' +
-                '}';
+        return super.toString() + "/nAlarm sound: " + getAlarmSound();
     }
 }
