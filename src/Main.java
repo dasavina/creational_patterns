@@ -1,4 +1,5 @@
 
+import AbstractFactory.factories.AbstractFactory;
 import AbstractFactory.factories.EuropeanGardenFactory;
 import AbstractFactory.factories.GardenFactory;
 import AbstractFactory.factories.JapaneseGardenFactory;
@@ -66,17 +67,10 @@ public class Main {
     }
 
     public static void abstractFactoryPattern() {
-        String input = "";
+        String input = "Japanese";
+        AbstractFactory abstractFactory = new AbstractFactory();
         Garden garden;
-        GardenFactory factory;
-        if (input.equals("European"))
-        {
-            factory = new EuropeanGardenFactory();
-        }
-        else {
-            factory = new JapaneseGardenFactory();
-        }
-        garden = new Garden(factory);
+        garden = new Garden( abstractFactory.getFactory(input));
         System.out.println(garden.toString());
     }
 
